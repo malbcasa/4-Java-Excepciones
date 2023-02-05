@@ -9,7 +9,13 @@ public class Flujo {
 
 	private static void metodo1() {
 		System.out.println("Inicio metodo1");
-		metodo2();
+		try {
+			metodo2();
+		}catch (MiException me) {
+			System.out.println("Catch me en metodo1");
+			System.out.println(me.getMessage());
+			me.printStackTrace();
+		}
 		System.out.println("Fin metodo1");
 		
 	}
@@ -41,7 +47,7 @@ public class Flujo {
 		/*
 		ArithmeticException ae = new ArithmeticException();
 		throw ae; */
-		throw new ArithmeticException("Arithmetic error");
+		throw new MiException("Lanzó mi excepción");
 		//System.out.println("Fin metodo2"); No puede haber codigo a ejecutar debajo del throw
 	}
 }
