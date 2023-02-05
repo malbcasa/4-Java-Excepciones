@@ -18,7 +18,7 @@ public class Flujo {
 		System.out.println("Inicio metodo2");
 		for(int i = 1; i <= 5 ; i++) {
 			System.out.println(i);
-			
+			/*
 			try {
 				if ( i == 3) {
 					int num = 0; 
@@ -32,12 +32,16 @@ public class Flujo {
 				System.out.println("Atrapo exception");
 				System.out.println(exception.getMessage());
 				exception.printStackTrace();
-			}/* catch (NullPointerException exception) {
+			} catch (NullPointerException exception) {
 				System.out.println("Atrapo nullpointer");
 				System.out.println(exception.getMessage());
 				exception.printStackTrace();
 			}*/
 		}
-		System.out.println("Fin metodo2");
+		/*
+		ArithmeticException ae = new ArithmeticException();
+		throw ae; */
+		throw new ArithmeticException("Arithmetic error");
+		//System.out.println("Fin metodo2"); No puede haber codigo a ejecutar debajo del throw
 	}
 }
