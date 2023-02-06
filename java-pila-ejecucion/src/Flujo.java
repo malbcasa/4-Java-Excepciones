@@ -3,26 +3,30 @@ public class Flujo {
 
 	public static void main(String[] args) {
 		System.out.println("Inicio main");
-		metodo1();
+		try {
+			metodo1();
+		} catch (MiException e) { //Exception e
+			e.printStackTrace();
+		}
 		System.out.println("Fin main");
 	}
 
-	private static void metodo1() {
+	private static void metodo1() throws MiException{
 		System.out.println("Inicio metodo1");
-		try {
+		//try {
 			metodo2();
-		}catch (MiException me) {
+		/*}catch (MiException me) {
 			System.out.println("Catch me en metodo1");
 			System.out.println(me.getMessage());
 			me.printStackTrace();
-		}
+		}*/
 		System.out.println("Fin metodo1");
 		
 	}
 
-	private static void metodo2() {
+	private static void metodo2() throws MiException{
 		System.out.println("Inicio metodo2");
-		for(int i = 1; i <= 5 ; i++) {
+		/*for(int i = 1; i <= 5 ; i++) {
 			System.out.println(i);
 			/*
 			try {
@@ -43,7 +47,7 @@ public class Flujo {
 				System.out.println(exception.getMessage());
 				exception.printStackTrace();
 			}*/
-		}
+		
 		/*
 		ArithmeticException ae = new ArithmeticException();
 		throw ae; */
